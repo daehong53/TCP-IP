@@ -7,3 +7,5 @@
 6주차(2022-04-07)
 
 <img width="80%" src="./pic/0407.PNG"/>
+<img width="80%" src="./pic/udp_client.PNG"/>
+<img width="80%" src="./pic/udp_server.PNG"/>
