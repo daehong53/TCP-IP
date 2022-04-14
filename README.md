@@ -10,3 +10,6 @@
 <img width="80%" src="./pic/udp_client.PNG"/>
 <img width="80%" src="./pic/udp_server.PNG"/>
 <img width="80%" src="./pic/clientserver.PNG"/>
+
+7주차(2020-04-14)
+<img width="80%" src="./pic/0414.PNG"/>
