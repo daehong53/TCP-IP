@@ -14,3 +14,8 @@ fmaily addr port
  구조체 프로토콜 주소체계 _addr ip주소 
  리틀엔디안이면 빅엔디안으로 변환해야 됨  long ip주소 32비트 
  포트는 16비트 shot
+ 숏트 16비트
+ 
+ 32비트 port
+ 
+ aton a= String address n = Network address
