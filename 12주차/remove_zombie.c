@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		if(pid==0)
 		{
 			puts("Hi! I'm child process");
-			sleep(10);
+			sleep(15);
 			exit(24);
 		}
 		else
