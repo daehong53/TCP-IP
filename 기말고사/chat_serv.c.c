@@ -33,11 +33,14 @@ int main(int argc, char *argv[])
   
 	pthread_mutex_init(&mutx, NULL); //mutex 초기화
 	serv_sock=socket(PF_INET, SOCK_STREAM, 0);  //서버 소켓 연결
-
+	// 첫번째 인자: ip 버전 4프로토콜을 사용
+	//두번째 인자: 스트림통신 즉 TCP를 이용(연결지향적)
+	//세번째 인자: TCP/UDP를 정해주는 거인데 이미 첫번째 두번째 인자를 통해서 당연히
+	//IPPROTO_TCP가 되어서 0으로 해도 됩니다.
 	memset(&serv_adr, 0, sizeof(serv_adr)); //초기화
-	serv_adr.sin_family=AF_INET; 
-	serv_adr.sin_addr.s_addr=htonl(INADDR_ANY);
-	serv_adr.sin_port=htons(atoi(argv[1]));
+	serv_adr.sin_family=AF_INET; //addr family -> AF_INET : internet family IPv4
+	serv_adr.sin_addr.s_addr=htonl(INADDR_ANY); //서버 IP 지정
+	serv_adr.sin_port=htons(atoi(argv[1]));//서버 port
 	
 	if(bind(serv_sock, (struct sockaddr*) &serv_adr, sizeof(serv_adr))==-1) //주소할당
     //5로 지정을 했으니 5명까지만 가능한 채팅이 아니라 큐의 크기가 5이고 운영체제가 여유가 된다면 알아서 accept하고 총 256명까지
