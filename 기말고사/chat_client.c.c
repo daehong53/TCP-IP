@@ -33,11 +33,14 @@ int main(int argc, char *argv[])
     //argv[3] 이 hong 이라면 "[hong]"이 name 이 됩니다.
 	sprintf(name, "[%s]", argv[3]);// 이름 입력 받음
 	sock=socket(PF_INET, SOCK_STREAM, 0); //서버 소켓 연결
-	
+	// 첫번째 인자: ip 버전 4프로토콜을 사용
+	//두번째 인자: 스트림통신 즉 TCP를 이용(연결지향적)
+	//세번째 인자: TCP/UDP를 정해주는 거인데 이미 첫번째 두번째 인자를 통해서 당연히
+	//IPPROTO_TCP가 되어서 0으로 해도 됩니다.
 	memset(&serv_addr, 0, sizeof(serv_addr)); //초기화
-	serv_addr.sin_family=AF_INET;
-	serv_addr.sin_addr.s_addr=inet_addr(argv[1]);
-	serv_addr.sin_port=htons(atoi(argv[2]));
+	serv_addr.sin_family=AF_INET; //addr_famil -> AF_INET : internet family IPV4를 사용합니다
+	serv_addr.sin_addr.s_addr=inet_addr(argv[1]); //서버 IP를 지정
+	serv_addr.sin_port=htons(atoi(argv[2])); // 서버
 	  
 	if(connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr))==-1) //연결
 		error_handling("connect() error");
