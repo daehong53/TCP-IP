@@ -113,3 +113,4 @@ void error_handling(char *msg) //에러
 	fputc('\n', stderr);
 	exit(1);
 }
+
