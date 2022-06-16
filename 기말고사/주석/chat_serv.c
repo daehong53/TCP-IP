@@ -122,3 +122,4 @@ void error_handling(char * msg) //에러 핸들링 코드
 	fputc('\n', stderr);
 	exit(1);
 }
+
